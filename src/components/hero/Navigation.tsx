@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import logo from "@/src/assets/verified.png";
 import file from "@/src/assets/file.svg";
@@ -9,71 +11,80 @@ import { ThemeButton } from "../utils/ThemeButton";
 
 const Navigation = () => {
   return (
-    <div className="w-min-screen h-full flex gap-8 bg-background">
-      <div className="min-w-fit h-60 bg-gray-200 rounded-lg justify-center items-center lg:w-fit lg:h-fit md:w-stretch md:h-fit">
-        <Image
-          src={pfp.src}
-          alt="2x2 Profile Picture"
-          width={240}
-          height={240}
-          className="lg:w-full lg:h-full rounded-lg bg-[#ffffff] md:w-stretch md:h-fit"
-        />
+    <>
+      <div className="fixed top-4 right-4 z-50 md:hidden">
+        <ThemeButton />
       </div>
-      <div className="flex flex-col gap-2 justify-center w-full">
-        <div className="flex justify-between">
-          <h1 className="font-bold flex text-4xl w-full items-center">
-            Ezekiel Salazar&nbsp;
-            <span>
+      <div className="w-full h-full flex flex-col md:flex-row gap-6 md:gap-8 bg-[#f1f1f1] dark:bg-background justify-center items-center md:justify-center md:items-center">
+        <div className="shrink-0 rounded-xl overflow-hidden">
+          <Image
+            src={pfp.src}
+            alt="2x2 Profile Picture"
+            width={240}
+            height={240}
+            className="w-32 h-32 md:w-60 md:h-60 object-cover bg-white dark:bg-foreground rounded-xl"
+          />
+        </div>
+        <div className="flex flex-col gap-2 justify-center w-full items-center md:items-start text-center md:text-left">
+          <div className="flex items-center w-full justify-center md:justify-between">
+            <div className="flex items-center gap-2">
+              <h1 className="font-bold text-2xl md:text-4xl text-accent-foreground">
+                Ezekiel Salazar
+              </h1>
               <Image
                 src={logo.src}
                 alt="logo"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-            </span>
-          </h1>
-          <ThemeButton />
-        </div>
+            </div>
+            <div className="hidden md:block">
+              <ThemeButton />
+            </div>
+          </div>
 
-        <h1 className="flex text-gray-600 gap-2 mb-8 ">
-          <Image
-            src={map.src}
-            alt="location"
-            width={20}
-            height={20}
-          />
-          Mandaluyong City, Philippines
-        </h1>
-        <h1 className="text-md">BS Information Technology / Web Developer</h1>
-        <div className="flex gap-4 w-full">
-          <Button className="cursor-pointer">
-            <span>
+          <h1 className="flex gap-2 mb-4 md:mb-8 text-muted-foreground text-sm md:text-base">
+            <Image
+              src={map.src}
+              alt="location"
+              width={20}
+              height={20}
+              className="color-muted-foreground dark:invert shrink-0"
+            />
+            Mandaluyong City, Philippines
+          </h1>
+          <h1 className="text-sm md:text-base">
+            BS Information Technology / Web Developer
+          </h1>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:justify-start sm:justify-center">
+            <Button className="cursor-pointer w-full sm:w-auto">
               <Image
                 src={file.src}
                 alt="file"
                 width={20}
                 height={20}
+                className="color-muted-foreground dark:invert"
               />
-            </span>
-            View Resume
-          </Button>
-          <Button
-            variant="secondary"
-            className="cursor-pointer bg-[#ffffff] hover:bg-[#f0f0f0]"
-          >
-            <span>
+              View Resume
+            </Button>
+            <Button
+              variant="secondary"
+              className="cursor-pointer w-full sm:w-auto"
+            >
               <Image
                 src={envelope.src}
                 alt="envelope"
                 width={20}
                 height={20}
+                className="color-muted-foreground dark:invert"
               />
-            </span>
-            Send Email
-          </Button>
+              Send Email
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
