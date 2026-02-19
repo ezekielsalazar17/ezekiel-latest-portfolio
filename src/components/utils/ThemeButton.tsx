@@ -12,14 +12,7 @@ export function ThemeButton() {
   const [mounted, setMounted] = React.useState<boolean>(false);
   React.useEffect(() => setMounted(true), []);
 
-  if (!mounted)
-    return (
-      <Button
-        variant="outline"
-        size="icon"
-        disabled
-      />
-    );
+  if (!mounted) return <Button variant="outline" size="icon" disabled />;
 
   const toggleTheme = (): void => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -32,10 +25,7 @@ export function ThemeButton() {
       onClick={toggleTheme}
       className="relative overflow-hidden"
     >
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-      >
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={theme}
           initial={{ y: -20, opacity: 0, rotate: -90 }}
@@ -43,7 +33,11 @@ export function ThemeButton() {
           exit={{ y: 20, opacity: 0, rotate: 90 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-          {theme === "light" ? <Sun className="h-[1.2rem] w-[1.2rem]" /> : <Moon className="h-[1.2rem] w-[1.2rem]" />}
+          {theme === "light" ? (
+            <Sun className="h-[1.2rem] w-[1.2rem]" />
+          ) : (
+            <Moon className="h-[1.2rem] w-[1.2rem]" />
+          )}
         </motion.div>
       </AnimatePresence>
       <span className="sr-only">Toggle theme</span>

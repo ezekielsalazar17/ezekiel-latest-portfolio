@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <div className="bg-background dark:bg-primary-foreground flex flex-col gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
+    <div className="flex-1 bg-background dark:bg-primary-foreground flex flex-col gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
       <div className="flex flex-row w-full h-full gap-2 align-start">
         <Image
           src={AboutIcon}
