@@ -21,8 +21,8 @@ export default function Skills() {
           />
           <h1 className="text-2xl font-bold">Tech Stack</h1>
         </div>
-        <div className="flex w-full gap-4 flex-row lg:flex-row sm:flex-col">
-          <div className="flex flex-col gap-2 w-6/12 lg:6/12 sm:w-full">
+        <div className="flex w-full flex-row lg:flex-row sm:flex-col gap-4">
+          <div className="flex flex-col gap-4 w-6/12 lg:6/12 sm:w-full">
             <h1 className="text-lg font-bold">Frontend</h1>
             <div className="flex flex-row flex-wrap gap-2">
               {Frontend.map((frontend, index) => {
