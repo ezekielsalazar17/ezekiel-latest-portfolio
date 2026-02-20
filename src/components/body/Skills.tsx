@@ -3,13 +3,7 @@ import Braces from "@/src/assets/braces.svg";
 import Image from "next/image";
 
 export default function Skills() {
-  const Frontend = [
-    "Frontend",
-    "React.Js",
-    "Next.Js",
-    "Tailwind CSS",
-    "Wordpress",
-  ];
+  const Frontend = ["Frontend", "React.Js", "Next.Js", "Tailwind CSS", "Wordpress"];
   const Backend = ["Node.Js", "Express.Js"];
   const Frameworks = ["Next.Js", "Bootstrap", "Material UI", "Shadcn UI"];
   const Tools = ["VSCode", "Github", "Figma"];

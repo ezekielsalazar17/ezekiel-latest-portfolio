@@ -31,6 +31,7 @@ export default function Home() {
           <Project />
         </div>
       </div>
+      
     </div>
   );
 }

@@ -7,13 +7,17 @@ import envelope from "@/src/assets/envelope.svg";
 import map from "@/src/assets/map-pin.svg";
 import pfp from "@/src/assets/ezekiel2x2.png";
 import Image from "next/image";
-import { ThemeButton } from "../utils/ThemeButton";
+import { ThemeButton } from "../../utils/ThemeButton";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const Navigation = () => {
   return (
     <>
-      <BlurFade delay={0.25} blur="10px" inView={true}>
+      <BlurFade
+        delay={0.25}
+        blur="10px"
+        inView={true}
+      >
         <div className="fixed top-4 right-4 z-50 md:hidden">
           <ThemeButton />
         </div>
@@ -30,9 +34,7 @@ const Navigation = () => {
           <div className="flex flex-col gap-2 justify-center w-full items-center md:items-start text-center md:text-left">
             <div className="flex items-center w-full justify-center md:justify-between">
               <div className="flex items-center gap-2">
-                <h1 className="font-bold text-2xl md:text-4xl text-accent-foreground">
-                  Ezekiel Salazar
-                </h1>
+                <h1 className="font-bold text-2xl md:text-4xl text-accent-foreground">Ezekiel Salazar</h1>
                 <Image
                   src={logo.src}
                   alt="logo"
@@ -56,11 +58,12 @@ const Navigation = () => {
               />
               Mandaluyong City, Philippines
             </h1>
-            <h1 className="text-sm md:text-base">
-              BS Information Technology / Web Developer
-            </h1>
+            <h1 className="text-sm md:text-base">BS Information Technology / Web Developer</h1>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:justify-start sm:justify-center">
-              <Button className="cursor-pointer w-full sm:w-auto" asChild>
+              <Button
+                className="cursor-pointer w-full sm:w-auto"
+                asChild
+              >
                 <a
                   download="Salazar, Ezekiel_RESUME.pdf"
                   href="/NSTP-Letter.pdf"
