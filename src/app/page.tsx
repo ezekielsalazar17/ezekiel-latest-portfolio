@@ -10,7 +10,7 @@ export default function Home() {
     <div className="max-w-7xl mx-auto w-full my-6 md:my-20 px-4 sm:px-6 flex flex-col gap-4">
       <Navigation />
 
-      <div className="flex flex-col lg:flex-row lg:items-stretch gap-4 lg:w-full mx-auto">
+      <div className="flex flex-col w-full lg:flex-row lg:items-stretch gap-4 lg:w-full mx-auto">
         <div className="w-full lg:w-2/3 flex flex-col">
           <Body />
         </div>
@@ -23,15 +23,14 @@ export default function Home() {
         <Skills />
       </div>
 
-      <div className="w-full h-full mx-auto flex flex-col lg:flex-row gap-4">
-        <div className="w-full lg:w-1/3">
+      <div className="flex flex-col w-full lg:flex-row lg:items-stretch gap-4 lg:w-full mx-auto">
+        <div className="w-full lg:w-1/3 flex flex-col">
           <Contacts />
         </div>
-        <div className="w-full lg:w-2/3">
+        <div className="w-full lg:w-2/3 flex flex-col">
           <Project />
         </div>
       </div>
-      
     </div>
   );
 }

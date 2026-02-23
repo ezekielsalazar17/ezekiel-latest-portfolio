@@ -12,24 +12,15 @@ type TProject = {
 export default function Project() {
   const projects: TProject[] = [
     {
-      title: "Project 1",
-      description: "lorem ipsum dolor sit amet.",
-      url: "https://www.github.com/ezekiel-portfolio",
-    },
-    {
-      title: "Project 1",
-      description: "lorem ipsum dolor sit amet.",
-      url: "https://www.github.com/ezekiel-portfolio",
-    },
-    {
-      title: "Project 1",
-      description: "lorem ipsum dolor sit amet.",
-      url: "https://www.github.com/ezekiel-portfolio",
+      title: "My Portfolio",
+      description:
+        "My personal portfolio built with Next.js, Tailwind CSS, and TypeScript.",
+      url: "https://ezekiel-portfolio17.netlify.app",
     },
   ];
   return (
-    <BlurFade inView delay={0.2} offset={10} blur="10px">
-      <div className="bg-background dark:bg-primary-foreground flex flex-col gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
+    <BlurFade inView delay={0.4} offset={10} blur="10px">
+      <div className="bg-background dark:bg-primary-foreground flex flex-col w-full gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
         <div className="flex flex-row w-full h-full gap-2 align-start">
           <Image
             src={Folders}
@@ -51,16 +42,22 @@ export default function Project() {
                   <h1 className="font-bold text-xl tracking-tight text-foreground dark:text-foreground">
                     {project.title}
                   </h1>
-                  <p className="break-all tracking-normal text-neutral-700 dark:invert">
+                  <p className="break-normal tracking-normal text-neutral-700 dark:invert">
                     {project.description}
                   </p>
                 </div>
 
                 <Button
                   asChild
-                  className="bg-foreground w-fit dark:bg-primary-background dark:bg-foreground text-xs justify-start"
+                  className="bg-foreground w-fit dark:bg-primary-background dark:bg-foreground text-xs justify-start hover:neutral-700 dark:hover:bg-neutral-300"
                 >
-                  <a href={project.url}>{project.title}</a>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.title}
+                  </a>
                 </Button>
               </div>
             );
