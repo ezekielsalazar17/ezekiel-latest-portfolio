@@ -1,9 +1,17 @@
 import { BlurFade } from "@/components/ui/blur-fade";
 import Braces from "@/src/assets/braces.svg";
+import { m } from "framer-motion";
 import Image from "next/image";
 
 export default function Skills() {
-  const Frontend = ["Frontend", "React.Js", "Next.Js", "Tailwind CSS", "Wordpress"];
+  const Frontend = [
+    "HTML",
+    "CSS",
+    "React.Js",
+    "Next.Js",
+    "Tailwind CSS",
+    "Wordpress",
+  ];
   const Backend = ["Node.Js", "Express.Js"];
   const Frameworks = ["Next.Js", "Bootstrap", "Material UI", "Shadcn UI"];
   const Tools = ["VSCode", "Github", "Figma"];
@@ -29,9 +37,9 @@ export default function Skills() {
                 return (
                   <div
                     key={index}
-                    className="text-foreground bg-[#f1f1f1] dark:invert dark:text-background p-2 rounded-sm border font-bold border-neutral-300 dark:border-neutral-700"
+                    className="bg-[#f1f1f1] dark:bg-background p-2 border border-neutral-300 dark:border-accent rounded-md gap-2"
                   >
-                    {frontend}
+                    <h1 className="text-md font-bold">{frontend}</h1>
                   </div>
                 );
               })}
@@ -44,9 +52,9 @@ export default function Skills() {
                 return (
                   <div
                     key={index}
-                    className="text-foreground bg-[#f1f1f1] dark:invert dark:text-background p-2 rounded-sm border border-neutral-300 font-bold dark:border-neutral-700"
+                    className="bg-[#f1f1f1] dark:bg-background p-2 border border-neutral-300 dark:border-accent rounded-md gap-2"
                   >
-                    {backend}
+                    <h1 className="text-md font-bold">{backend}</h1>
                   </div>
                 );
               })}
@@ -61,9 +69,9 @@ export default function Skills() {
                 return (
                   <div
                     key={index}
-                    className="text-foreground bg-[#f1f1f1] dark:invert dark:text-background p-2 rounded-sm border border-neutral-300 font-bold dark:border-neutral-700"
+                    className="bg-[#f1f1f1] dark:bg-background p-2 border border-neutral-300 dark:border-accent rounded-md gap-2"
                   >
-                    {framework}
+                    <h1 className="text-md font-bold">{framework}</h1>
                   </div>
                 );
               })}
@@ -76,9 +84,9 @@ export default function Skills() {
                 return (
                   <div
                     key={index}
-                    className="text-foreground bg-[#f1f1f1] dark:invert dark:text-background p-2 rounded-sm border border-neutral-300 font-bold dark:border-neutral-700"
+                    className="bg-[#f1f1f1] dark:bg-background p-2 border border-neutral-300 dark:border-accent rounded-md gap-2"
                   >
-                    {tool}
+                    <h1 className="text-md font-bold">{tool}</h1>
                   </div>
                 );
               })}

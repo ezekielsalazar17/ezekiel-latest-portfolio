@@ -42,7 +42,7 @@ export default function Contacts() {
           />
           <h1 className="text-2xl font-bold">Contact</h1>
         </div>
-        <div className="grid grid-cols-3 lg:grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           {contacts.map((contact, index) => {
             return (
               <div key={index}>

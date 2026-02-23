@@ -24,7 +24,7 @@ const Navigation = () => {
               alt="2x2 Profile Picture"
               width={240}
               height={240}
-              className="w-32 h-32 md:w-60 md:h-60 object-cover bg-white dark:bg-foreground rounded-xl"
+              className="w-48 h-48 md:w-60 md:h-60 object-cover dark:bg-foreground rounded-xl"
             />
           </div>
           <div className="flex flex-col gap-2 justify-center w-full items-center md:items-start text-center md:text-left">
@@ -59,12 +59,9 @@ const Navigation = () => {
             <h1 className="text-sm md:text-base">
               BS Information Technology / Web Developer
             </h1>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:justify-start sm:justify-center">
-              <Button className="cursor-pointer w-full sm:w-auto" asChild>
-                <a
-                  download="Salazar, Ezekiel_RESUME.pdf"
-                  href="/NSTP-Letter.pdf"
-                >
+            <div className="flex flex-row sm:flex-row gap-3 md:gap-4 w-full justify-center md:justify-start lg:justify-start">
+              <Button className="cursor-pointer" asChild>
+                <a download="Salazar, Ezekiel_RESUME.pdf" href="/RESUME.pdf">
                   <Image
                     src={file.src}
                     alt="file"
@@ -76,11 +73,7 @@ const Navigation = () => {
                 </a>
               </Button>
 
-              <Button
-                variant="secondary"
-                className="cursor-pointer w-full sm:w-auto"
-                asChild
-              >
+              <Button variant="secondary" className="cursor-pointer" asChild>
                 <a
                   href="https://mail.google.com/mail/?view=cm&to=ezekiel.salazar18@gmail.com&"
                   target="_blank"

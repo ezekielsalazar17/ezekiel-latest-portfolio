@@ -4,6 +4,7 @@ import Navigation from "../components/hero/Navigation";
 import Skills from "../components/body/Skills";
 import Project from "../components/body/Project";
 import Contacts from "../components/body/Contacts";
+import Gallery from "../components/body/Gallery";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
         <div className="w-full lg:w-2/3 flex flex-col">
           <Project />
         </div>
+      </div>
+      <div className="w-full flex flex-col">
+        <Gallery />
       </div>
     </div>
   );
