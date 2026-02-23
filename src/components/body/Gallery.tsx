@@ -10,6 +10,7 @@ import Image7 from "@/src/assets/profilePhotos/image7.jpg";
 import Image8 from "@/src/assets/profilePhotos/image8.jpg";
 import Image9 from "@/src/assets/profilePhotos/image9.jpg";
 import GallerySvg from "@/src/assets/folders.svg";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const profilePhotos = [
   Image1,
@@ -25,32 +26,34 @@ const profilePhotos = [
 
 export default function Gallery() {
   return (
-    <div className="p-6 md:p-8 bg-background dark:bg-primary-foreground rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
-      <div className="flex flex-row w-full h-full gap-2 align-start">
-        <Image
-          src={GallerySvg}
-          alt="Gallery Image"
-          width={24}
-          height={24}
-          className="dark:invert"
-        />
-        <h1 className="text-2xl font-bold">Gallery</h1>
+    <BlurFade inView delay={0.2} offset={10} blur="10px">
+      <div className="p-6 md:p-8 bg-background dark:bg-primary-foreground rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
+        <div className="flex flex-row w-full h-full gap-2 align-start">
+          <Image
+            src={GallerySvg}
+            alt="Gallery Image"
+            width={24}
+            height={24}
+            className="dark:invert"
+          />
+          <h1 className="text-2xl font-bold">Gallery</h1>
+        </div>
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden p-4">
+          <Marquee pauseOnHover className="[--duration:40s] py-4">
+            {profilePhotos.map((profilePhoto, index) => (
+              <div key={index} className="flex shrink-0 p-2">
+                <Image
+                  src={profilePhoto}
+                  alt={`Profile Photo ${index + 1}`}
+                  width={180}
+                  height={180}
+                  className="rounded-md border border-[#f1f1f1] dark:border-accent object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden p-4">
-        <Marquee pauseOnHover className="[--duration:40s] py-4">
-          {profilePhotos.map((profilePhoto, index) => (
-            <div key={index} className="flex shrink-0 p-2">
-              <Image
-                src={profilePhoto}
-                alt={`Profile Photo ${index + 1}`}
-                width={180}
-                height={180}
-                className="rounded-md border border-[#f1f1f1] dark:border-accent object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
-        </Marquee>
-      </div>
-    </div>
+    </BlurFade>
   );
 }

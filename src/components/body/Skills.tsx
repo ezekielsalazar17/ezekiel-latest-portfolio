@@ -17,7 +17,7 @@ export default function Skills() {
   const Tools = ["VSCode", "Github", "Figma"];
 
   return (
-    <BlurFade delay={0.6}>
+    <BlurFade inView delay={0.8} offset={10} blur="10px">
       <div className="bg-background dark:bg-primary-foreground flex flex-col gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
         <div className="flex flex-row w-full h-full gap-2 align-start">
           <Image
