@@ -5,6 +5,7 @@ import Skills from "../components/body/Skills";
 import Project from "../components/body/Project";
 import Contacts from "../components/body/Contacts";
 import Gallery from "../components/body/Gallery";
+import ChatbotButton from "../components/chatbot/ChatbotButton";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <div className="w-full flex flex-col">
         <Gallery />
       </div>
+      <ChatbotButton />
     </div>
   );
 }
