@@ -6,7 +6,6 @@ import Project from "../components/body/Project";
 import Contacts from "../components/body/Contacts";
 import Gallery from "../components/body/Gallery";
 import ChatbotButton from "../components/chatbot/ChatbotButton";
-import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function Home() {
   return (
