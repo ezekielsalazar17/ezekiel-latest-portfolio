@@ -4,15 +4,18 @@ import Image from "next/image";
 import { useState } from "react";
 import ChatbotImage from "@/src/assets/bot.svg";
 import Chatbot from "./Chatbot";
-import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function ChatbotButton() {
   const [open, setOpen] = useState(false);
 
+  function HandleOpen(): void {
+    setOpen((prevOpen: boolean) => !prevOpen);
+  }
+
   return (
     <>
       <div
-        onClick={() => setOpen(true)}
+        onClick={HandleOpen}
         className="fixed bottom-4 right-4 bg-background p-3 rounded-full 
         border border-foreground dark:border-accent cursor-pointer 
         dark:bg-primary-foreground shadow-lg hover:scale-110 transition"
