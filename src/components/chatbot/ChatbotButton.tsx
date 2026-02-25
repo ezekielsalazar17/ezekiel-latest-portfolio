@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import ChatbotImage from "@/src/assets/bot.svg";
 import Chatbot from "./Chatbot";
-import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function ChatbotButton() {
   const [open, setOpen] = useState(false);

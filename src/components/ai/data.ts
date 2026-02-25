@@ -20,6 +20,8 @@ export type PortfolioData = {
   fullName: FullName;
   about: string;
   location: string;
+  age: string;
+  school: string;
   skills: string[];
   projects: Project[];
   experiences: Experience[];
@@ -30,11 +32,11 @@ export const MyPortfolioData: PortfolioData = {
     firstName: "Ezekiel",
     lastName: "Salazar",
   },
-  about: "A web developer",
+  about: "A web developer with background with node.js and express.js also using figma and github.",
   location: "Mandaluyong City",
-  skills: [
-    "HTML, CSS, React, Next.Js, Javascript, TypeScript, Node.Js, Express.Js",
-  ],
+  age: "24 Years old",
+  skills: ["HTML, CSS, React, Next.Js, Javascript, TypeScript, Node.Js, Express.Js"],
+  school: "Rizal Technological University",
   projects: [
     {
       title: "My Portfolio",
