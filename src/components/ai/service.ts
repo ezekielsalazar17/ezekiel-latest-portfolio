@@ -11,6 +11,9 @@ export async function generateAIResponse(message: string): Promise<string> {
     1. ONLY answer questions related to the portfolio data provided.
     2. If the user asks something NOT in the data, politely say: "I'm sorry, I am only programmed to answer questions about ${MyPortfolioData.fullName.firstName}'s work."
     3. Keep answers concise and friendly.
+    4. Keep your answer not longer than 100 words.
+    5. You can answer in english if english is the user input.
+    6. You can answer in tagalog if tagalog is the user input.
   `;
 
   const completion = await openrouter.chat.completions.create({
@@ -21,6 +24,5 @@ export async function generateAIResponse(message: string): Promise<string> {
     ],
   });
 
-  // Extract content safely and return a string
   return completion.choices[0]?.message?.content || "No response generated.";
 }

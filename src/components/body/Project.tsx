@@ -13,13 +13,17 @@ export default function Project() {
   const projects: TProject[] = [
     {
       title: "My Portfolio",
-      description:
-        "My personal portfolio built with Next.js, Tailwind CSS, and TypeScript.",
-      url: "https://ezekiel-portfolio17.netlify.app",
+      description: "My personal portfolio built with Next.js, Tailwind CSS, and TypeScript.",
+      url: "https://ezekiel-latest-portfolio.vercel.app/",
     },
   ];
   return (
-    <BlurFade inView delay={0.4} offset={10} blur="10px">
+    <BlurFade
+      inView
+      delay={0.4}
+      offset={10}
+      blur="10px"
+    >
       <div className="bg-background dark:bg-primary-foreground flex flex-col w-full gap-6 p-6 md:p-8 rounded-md shadow-md border border-[#f1f1f1] dark:border-accent">
         <div className="flex flex-row w-full h-full gap-2 align-start">
           <Image
@@ -42,9 +46,7 @@ export default function Project() {
                   <h1 className="font-bold text-xl tracking-tight text-foreground dark:text-foreground">
                     {project.title}
                   </h1>
-                  <p className="break-normal tracking-normal text-neutral-700 dark:invert">
-                    {project.description}
-                  </p>
+                  <p className="break-normal tracking-normal text-neutral-700 dark:invert">{project.description}</p>
                 </div>
 
                 <Button

@@ -14,11 +14,26 @@ interface ChatResponse {
 }
 
 export default function Chatbot() {
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [userInput, setUserInput] = useState<string>("");
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = sessionStorage.getItem("chat_history");
+    if (saved) {
+      try {
+        return JSON.parse(saved) as Message[];
+      } catch (error) {
+        console.error("Failed to parse chat history", error);
+        return [];
+      }
+    }
+    return [];
+  });
   const [loading, setLoading] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sessionStorage.setItem("chat_history", JSON.stringify(messages));
+  }, [messages]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -28,24 +43,30 @@ export default function Chatbot() {
 
   useEffect(() => {
     if (messages.length === 0) {
+      setLoading(true);
       const greetings: Message = {
         role: "assistant",
-        content: "Hello! Feel free to ask me about this Portfolio!",
+        content:
+          "Hello! Feel free to ask me about this Portfolio! His skills, work experience, and his educational background",
       };
-      setMessages([greetings]);
+      const timer = setTimeout(() => {
+        setMessages([greetings]);
+        setLoading(false);
+      }, 1000);
+      return () => clearTimeout(timer);
     }
-  }, []);
+  }, [messages.length]);
 
   const sendMessage = async (): Promise<void> => {
-    if (!message.trim() || loading) return;
+    if (!userInput.trim() || loading) return;
 
     const userMessage: Message = {
       role: "user",
-      content: message,
+      content: userInput,
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    setMessage("");
+    setUserInput("");
     setLoading(true);
 
     try {
@@ -61,11 +82,10 @@ export default function Chatbot() {
 
       const botMessage: Message = {
         role: "assistant",
-        content:
-          data.reply ||
-          "I'm sorry, I can only answer questions regarding the portfolio.",
+        content: data.reply || "I'm sorry, I can only answer questions regarding the portfolio.",
       };
 
+      await new Promise((resolve) => setTimeout(resolve, 800));
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error("Chat error:", error);
@@ -90,33 +110,26 @@ export default function Chatbot() {
             <div
               key={index}
               className={`p-2 rounded-lg text-sm max-w-fit ${
-                msg.role === "user"
-                  ? "ml-auto bg-primary text-primary-foreground"
-                  : "bg-muted"
+                msg.role === "user" ? "ml-auto bg-primary text-primary-foreground" : "bg-muted"
               }`}
             >
               {msg.content}
             </div>
           ))}
 
-          {loading && (
-            <div className="bg-muted p-2 rounded-lg text-sm w-fit animate-pulse">
-              Typing...
-            </div>
-          )}
+          {loading && <div className="bg-muted p-2 rounded-lg text-sm w-fit animate-pulse">Typing...</div>}
           <div ref={scrollRef} />
         </div>
       </div>
 
       <div ref={scrollRef} />
 
-      {/* Input */}
       <div className="flex border-t p-2 gap-2">
         <input
           type="text"
           className="flex-1 border rounded px-2 py-1 text-sm"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a message..."
           disabled={loading}
