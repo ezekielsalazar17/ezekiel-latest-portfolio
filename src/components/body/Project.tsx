@@ -16,6 +16,12 @@ export default function Project() {
       description: "My personal portfolio built with Next.js, Tailwind CSS, and TypeScript.",
       url: "https://ezekiel-latest-portfolio.vercel.app/",
     },
+    {
+      title: "Nos Ludere Ut (NLU)",
+      description:
+        "A community that was made by women that ensures a safe space for individuals in different categories in Call of Duty (Mobile)",
+      url: "https://nlu-two.vercel.app/",
+    },
   ];
   return (
     <BlurFade
