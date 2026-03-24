@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ChatbotImage from "@/src/assets/bot.svg";
 import Chatbot from "./Chatbot";
+import { Button } from "@/components/ui/button";
 
 export default function ChatbotButton() {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,9 @@ export default function ChatbotButton() {
       <div
         onClick={HandleOpen}
         className="fixed bottom-4 right-4 bg-background p-3 rounded-full 
-        border border-foreground dark:border-accent cursor-pointer 
-        dark:bg-primary-foreground shadow-lg hover:scale-110 transition"
+  border border-foreground dark:border-accent cursor-pointer 
+  dark:bg-primary-foreground shadow-lg hover:scale-110 transition 
+  animate-float"
       >
         <Image
           src={ChatbotImage}
