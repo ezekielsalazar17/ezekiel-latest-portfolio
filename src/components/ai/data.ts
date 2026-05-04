@@ -42,7 +42,7 @@ export const MyPortfolioData: PortfolioData = {
       title: "My Portfolio",
       description: "My Personal Portfolio",
       technologies: ["HTML, CSS, React, Next.Js, TypeScript, Node.Js"],
-      link: "https://ezekiel-portfolio17.netlify.app/",
+      link: "https://ezekiel-salazar-portfolio.vercel.app/",
     },
   ],
   experiences: [

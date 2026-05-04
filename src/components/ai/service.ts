@@ -17,7 +17,7 @@ export async function generateAIResponse(message: string): Promise<string> {
   `;
 
   const completion = await openrouter.chat.completions.create({
-    model: "arcee-ai/trinity-large-preview:free",
+    model: "openai/gpt-oss-20b:free",
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: message },

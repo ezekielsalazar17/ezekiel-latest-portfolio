@@ -13,10 +13,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply });
   } catch (error: unknown) {
+    console.error("API Route Error:", error);
     const errorMessage =
       error instanceof Error ? error.message : "Internal Server Error";
-    console.error("API Route Error:", errorMessage);
 
-    return NextResponse.json({ error: "Failed to get reply" }, { status: 500 });
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
