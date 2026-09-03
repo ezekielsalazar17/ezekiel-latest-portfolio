@@ -65,8 +65,8 @@ const Navigation = () => {
                 asChild
               >
                 <a
-                  download="Salazar, Ezekiel_RESUME.pdf"
-                  href="/RESUME.pdf"
+                  download="SALAZAR_CV.pdf"
+                  href="/SALAZAR_CV.pdf"
                 >
                   <Image
                     src={file.src}
