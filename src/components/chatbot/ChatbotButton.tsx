@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import ChatbotImage from "@/src/assets/bot.svg";
 import Chatbot from "./Chatbot";
-import { Button } from "@/components/ui/button";
 
 export default function ChatbotButton() {
   const [open, setOpen] = useState(false);
@@ -15,12 +14,11 @@ export default function ChatbotButton() {
 
   return (
     <>
-      <div
+      <button
+        type="button"
+        aria-label="Open AI assistant"
         onClick={HandleOpen}
-        className="fixed bottom-4 right-4 bg-background p-3 rounded-full 
-  border border-foreground dark:border-accent cursor-pointer 
-  dark:bg-primary-foreground shadow-lg hover:scale-110 transition 
-  animate-float"
+        className="fixed bottom-4 right-4 bg-card p-3 rounded-full border border-border shadow-lg cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95"
       >
         <Image
           src={ChatbotImage}
@@ -29,11 +27,11 @@ export default function ChatbotButton() {
           alt="Chatbot"
           className="dark:invert"
         />
-      </div>
+      </button>
 
       {open && (
-        <div className="fixed bottom-20 right-4 w-fit h-fit bg-background dark:bg-primary-foreground border border-neutral-300 dark:border-accent rounded-xl shadow-2xl flex flex-col animate-in fade-in slide-in-from-bottom-4">
-          <div className="flex justify-between items-center p-3 border-b border-foreground dark:border-accent">
+        <div className="fixed bottom-20 right-4 w-fit h-fit bg-card border border-border shadow-2xl flex flex-col animate-in fade-in slide-in-from-bottom-4">
+          <div className="flex justify-between items-center p-3 border-b border-border">
             <Image
               src={ChatbotImage}
               width={32}
@@ -44,6 +42,7 @@ export default function ChatbotButton() {
             <h2 className="font-semibold">AI Assistant</h2>
             <button
               onClick={() => setOpen(false)}
+              aria-label="Close AI assistant"
               className="text-sm px-2 py-1 hover:bg-muted rounded"
             >
               ✕
