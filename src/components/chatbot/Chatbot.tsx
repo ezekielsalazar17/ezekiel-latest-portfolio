@@ -47,7 +47,7 @@ export default function Chatbot() {
       const greetings: Message = {
         role: "assistant",
         content:
-          "Hello! Feel free to ask me about this Portfolio! His skills, work experience, and his educational background",
+          "Hello! Feel free to ask me about this Portfolio! My skills, work experience, and my educational background",
       };
       const timer = setTimeout(() => {
         setMessages([greetings]);
@@ -82,7 +82,7 @@ export default function Chatbot() {
 
       const botMessage: Message = {
         role: "assistant",
-        content: data.reply || "I'm sorry, I can only answer questions regarding the portfolio.",
+        content: data.reply || "I'm sorry, I can only answer questions regarding my portfolio.",
       };
 
       await new Promise((resolve) => setTimeout(resolve, 800));

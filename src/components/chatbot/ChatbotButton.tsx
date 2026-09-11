@@ -32,14 +32,10 @@ export default function ChatbotButton() {
       {open && (
         <div className="fixed bottom-20 right-4 w-fit h-fit bg-card border border-border shadow-2xl flex flex-col animate-in fade-in slide-in-from-bottom-4">
           <div className="flex justify-between items-center p-3 border-b border-border">
-            <Image
-              src={ChatbotImage}
-              width={32}
-              height={32}
-              alt="Chatbot"
-              className="dark:invert"
-            />
-            <h2 className="font-semibold">AI Assistant</h2>
+            <div className="flex flex-row gap-2 items-center justify-center">
+              <div className="size-2 bg-green-500 rounded-full animate-pulse" />
+              <h2 className="font-semibold">Ezekiel</h2>
+            </div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close AI assistant"

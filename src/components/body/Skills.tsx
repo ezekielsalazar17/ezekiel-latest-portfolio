@@ -11,6 +11,7 @@ import {
   SiWordpress,
   SiNodedotjs,
   SiExpress,
+  SiExpo,
   SiBootstrap,
   SiMui,
   SiShadcnui,
@@ -28,6 +29,7 @@ const groups: { label: string; items: Skill[] }[] = [
       { name: "HTML", Icon: SiHtml5 },
       { name: "CSS", Icon: SiCss },
       { name: "React.Js", Icon: SiReact },
+      { name: "React Native", Icon: SiReact },
       { name: "Next.Js", Icon: SiNextdotjs },
       { name: "Tailwind CSS", Icon: SiTailwindcss },
       { name: "Wordpress", Icon: SiWordpress },
@@ -47,6 +49,7 @@ const groups: { label: string; items: Skill[] }[] = [
       { name: "Bootstrap", Icon: SiBootstrap },
       { name: "Material UI", Icon: SiMui },
       { name: "Shadcn UI", Icon: SiShadcnui },
+      { name: "Expo", Icon: SiExpo },
     ],
   },
   {
